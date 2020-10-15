@@ -1,0 +1,2 @@
+# classiCurves
+classify logistic curves
