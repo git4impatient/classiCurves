@@ -1,0 +1,4 @@
+# spark-submit --master yarn-client pi.py 10000000 4
+#spark-submit --master yarn-client pi.py  $1 $2
+#spark-submit  --master yarn-client --num-executors=2 --executor-cores=2 --executor-memory=1g --driver-memory=1g --driver-cores=1  pi.py
+spark-submit  --master yarn-client --num-executors=2 --executor-cores=2 --executor-memory=500m --driver-memory=600m --driver-cores=1  350pysparkml.classifier.py
