@@ -10,17 +10,17 @@ from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 # create spark sql session
 spark = SparkSession\
     .builder\
-    .appName("Waveform analsyis with pySparkML") \
+    .appName("Logistic Curve classification with pySparkML") \
     .config("spark.executor.instances", 1 ) \
     .config("spark.executor.memory", "2g") \
     .config("spark.executor.cores", 2) \
-    .config("spark.yarn.access.hadoopFileSystems","hdfs://merlin:8020/tmp/")\
+    .config("spark.yarn.access.hadoopFileSystems","hdfs://gromit:8020/tmp/")\
     .getOrCreate()
 
 
 # Load training data
 data = spark.read.format("libsvm")\
-    .load("hdfs://merlin:8020/tmp/clotcurvesSVM/clotcurvesSVM")
+    .load("hdfs://gromit:8020/tmp/logicurvesSVM/logicurvesSVM")
 # Split the data into train and test
 splits = data.randomSplit([0.6, 0.4], 1234)
 train = splits[0]

@@ -6,19 +6,19 @@
 #./gendata.py 1000000 > mydata.txt
 #ls -l
 
-hadoop fs -rm -r  /tmp/clotcurvesSVM
-#!hadoop fs -mkdir   s3a://cdp-sandbox-default-se/datalake/marty/clotcurves
-hadoop fs -mkdir /tmp/clotcurvesSVM
-#!python 200gencurves.py | gzip >clotcurves.gz 
-#hadoop fs -put - s3a://cdp-sandbox-default-se/datalake/marty/clotcuves/clotcuves.gz
+hadoop fs -rm -r  /tmp/logicurvesSVM
+#!hadoop fs -mkdir   s3a://cdp-sandbox-default-se/datalake/marty/logicurves
+hadoop fs -mkdir /tmp/logicurvesSVM
+#!python 200gencurves.py | gzip >logicurves.gz 
+#hadoop fs -put - s3a://cdp-sandbox-default-se/datalake/marty/logicuves/logicuves.gz
 # no local store go direct to S3
 
-# svm format can't read a gz file !python 210gencurvesSVM.py | gzip | hadoop fs -put -   s3a://cdp-sandbox-default-se/datalake/marty/clotcurvesSVM/clotcurvesSVM.gz
+# svm format can't read a gz file !python 210gencurvesSVM.py | gzip | hadoop fs -put -   s3a://cdp-sandbox-default-se/datalake/marty/logicurvesSVM/logicurvesSVM.gz
 
-python 210gencurvesSVM.py | hadoop fs -put -   /tmp/clotcurvesSVM/clotcurvesSVM
+python 210gencurvesSVM.py | hadoop fs -put -   /tmp/logicurvesSVM/logicurvesSVM
 
-#!hadoop fs -put clotcurves.gz  s3a://cdp-sandbox-default-se/datalake/marty/clotcurves
+#!hadoop fs -put logicurves.gz  s3a://cdp-sandbox-default-se/datalake/marty/logicurves
 
-hadoop fs -ls /tmp/clotcurvesSVM
+hadoop fs -ls /tmp/logicurvesSVM
 
 
