@@ -2,4 +2,7 @@
 #spark-submit --master yarn-client pi.py  $1 $2
 #spark-submit  --master yarn-client --num-executors=2 --executor-cores=2 --executor-memory=1g --driver-memory=1g --driver-cores=1  pi.py
 # to turn down the message noise edit vi /etc/spark/conf.cloudera.spark_on_yarn/log4j.properties  and change INFO  to WARN
+# select which python to use
+export PYSPARK_PYTHON=python3
+# go for it
 spark-submit  --master yarn-client --num-executors=2 --executor-cores=2 --executor-memory=500m --driver-memory=600m --driver-cores=1  350pysparkml.classifier.py
